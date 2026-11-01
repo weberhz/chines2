@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Estude as 300 palavras do HSK 1 em português, com cartões de revisão, exemplos, gramática e frases." />
+    <title>Vocabulário HSK 1 em português | Hanzi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="topbar">
+      <div class="topbar__inside shell">
+        <a class="brand" href="#inicio" aria-label="Hanzi, início">
+          <span class="brand__mark" lang="zh-Hans">言</span>
+          <span class="brand__word">HANZI</span>
+        </a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span><span class="sr-only">Abrir menu</span></button>
+        <nav class="nav" id="primary-nav" aria-label="Navegação principal">
+          <a href="#cartoes">Cartões</a>
+          <a href="#lista">Vocabulário</a>
+          <a href="#gramatica">Gramática</a>
+          <a href="#frases">Frases</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" id="inicio">
+        <div class="shell hero__inner">
+          <h1>Vocabulário <em>HSK 1</em></h1>
+          <p class="hero__intro">As 300 palavras do HSK 1 em português, com exemplos, gramática e cartões para revisar.</p>
+          <div class="stats" aria-label="Números do HSK 1">
+            <div><strong>300</strong><span>palavras</span></div>
+            <div><strong>246</strong><span>caracteres</span></div>
+          </div>
+          <div class="level-tabs" aria-label="Nível HSK">
+            <button class="is-active" type="button">HSK 1</button><button type="button" disabled title="Em breve">HSK 2</button><button type="button" disabled title="Em breve">HSK 3</button><button type="button" disabled title="Em breve">HSK 4</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="shell page-nav-wrap">
+        <nav class="page-nav" aria-label="Nesta página">
+          <h2>Nesta página</h2>
+          <a href="#cartoes"><b>1</b> Cartões</a>
+          <a href="#lista"><b>2</b> Vocabulário</a>
+          <a href="#gramatica"><b>3</b> Gramática</a>
+          <a href="#frases"><b>4</b> Frases</a>
+          <a href="#categorias"><b>5</b> Categorias</a>
+        </nav>
+      </div>
+
+      <section class="study-section" id="cartoes">
+        <div class="shell">
+          <div class="section-heading">
+            <h2>Cartões de estudo</h2>
+            <p>Clique no cartão ou pressione <kbd>Espaço</kbd> para virar. Use as setas <kbd>←</kbd> <kbd>→</kbd> para trocar de palavra.</p>
+          </div>
+          <div class="flash-settings" aria-label="Configurações dos cartões">
+            <label>Modo
+              <select id="card-mode"><option value="hanzi">Chinês → português</option><option value="meaning">Português → chinês</option></select>
+            </label>
+            <label class="check-label"><input id="hide-pinyin" type="checkbox" /> Ocultar pinyin</label>
+            <label class="check-label"><input id="hide-meaning" type="checkbox" /> Ocultar português</label>
+            <button class="outline-button" id="study-twenty" type="button">Estudar 20 palavras</button>
+          </div>
+          <div class="deck-label" id="deck-label">Todas as 300 palavras</div>
+          <button class="flashcard" id="flashcard" type="button" aria-label="Virar cartão">
+            <span class="card-side card-front"><small>Chinês</small><strong id="card-hanzi" lang="zh-Hans"></strong><i>Clique para virar</i></span>
+            <span class="card-side card-back"><small id="card-back-label">Português</small><strong id="card-meaning"></strong><span id="card-pinyin"></span><i>Clique para voltar</i></span>
+          </button>
+          <div class="card-context" id="card-context"></div>
+          <div class="card-controls">
+            <button class="icon-button" id="prev-card" type="button" aria-label="Palavra anterior">←</button>
+            <span id="card-count" aria-live="polite">1 / 300</span>
+            <button class="icon-button" id="next-card" type="button" aria-label="Próxima palavra">→</button>
+          </div>
+          <div class="rating-area">
+            <span>Você sabe esta palavra?</span>
+            <div><button type="button" class="rate-again" data-rating="again">Rever</button><button type="button" class="rate-learning" data-rating="learning">Aprendendo</button><button type="button" class="rate-know" data-rating="know">Já sei</button></div>
+          </div>
+          <p class="progress-copy" id="progress-copy" aria-live="polite"></p>
+          <div class="deck-actions">
+            <button class="text-button" id="shuffle-deck" type="button">Embaralhar</button><button class="text-button" id="all-deck" type="button">Todas as palavras</button><button class="text-button" id="download-csv" type="button">Baixar CSV</button><button class="text-button danger" id="clear-progress" type="button">Limpar progresso</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="vocab-section shell" id="lista">
+        <div class="section-heading">
+          <h2>Lista de palavras</h2>
+          <p>Busque por caractere, pinyin (com ou sem tom) ou português. Abra os exemplos para ver a palavra em contexto.</p>
+        </div>
+        <div class="filters" aria-label="Filtros da lista de vocabulário">
+          <label class="search-label"><span>Buscar</span><input id="vocab-search" type="search" placeholder="Ex.: 学, xue ou estudar" autocomplete="off" /></label>
+          <label><span>Classe</span><select id="pos-filter"><option value="all">Todas</option><option value="substantivo">Substantivos</option><option value="verbo">Verbos</option><option value="adjetivo">Adjetivos</option><option value="advérbio">Advérbios</option><option value="numeral">Numerais</option><option value="pronome">Pronomes</option><option value="partícula">Partículas</option><option value="classificador">Classificadores</option></select></label>
+          <label><span>Ordem</span><select id="order-filter"><option value="official">Lista oficial</option><option value="random">Aleatória</option><option value="unlearned">Ainda não sei</option></select></label>
+          <label class="tone-toggle"><input id="tone-toggle" type="checkbox" checked /> Cores dos tons</label>
+        </div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Nº</th><th>Chinês</th><th>Pinyin</th><th>Português</th><th>Classe</th><th>Exemplos</th></tr></thead>
+          <tbody id="vocab-body"></tbody>
+        </table></div>
+        <p class="table-count" id="table-count"></p>
+      </section>
+
+      <section class="grammar-section" id="gramatica">
+        <div class="shell">
+          <div class="section-heading">
+            <h2>Gramática</h2>
+            <p>As principais estruturas do HSK 1, com frases de exemplo e áudio quando disponível.</p>
+          </div>
+          <div class="grammar-grid" id="grammar-grid"></div>
+        </div>
+      </section>
+
+      <section class="sentence-section shell" id="frases">
+        <div class="section-heading"><h2>Frases de exemplo</h2><p>900 frases para praticar em contexto. Escolha um tema para filtrar.</p></div>
+        <div class="topic-tabs" id="topic-tabs" aria-label="Filtrar frases por tema"></div>
+        <div class="sentences-grid" id="sentences-grid"></div>
+      </section>
+
+      <section class="category-section" id="categorias">
+        <div class="shell">
+          <div class="section-heading"><h2>Vocabulário por categoria</h2><p>Escolha uma categoria para filtrar a lista ou estudar só aquele assunto nos cartões.</p></div>
+          <div class="category-grid" id="category-grid"></div>
+        </div>
+      </section>
+
+    </main>
+    <footer><div class="shell footer-inner"><a class="brand brand--footer" href="#inicio"><span class="brand__mark" lang="zh-Hans">言</span><span class="brand__word">HANZI</span></a><p>Vocabulário HSK 1 em português do Brasil.</p><a href="#inicio">Voltar ao topo ↑</a></div></footer>
+    <script src="data.js"></script>
+    <script src="app-v2.js"></script>
+  </body>
+</html>
